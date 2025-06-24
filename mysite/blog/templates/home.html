@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  My Blogs
+{% endblock %}
+
+{%block css_file%}
+    <link rel="stylesheet" href="{% static 'index.css'%}">
+{% endblock %}
+
+
+{% block content %}
+    <head id="main-navigation">
+        <h1><a href="">Darshil's blog</a></h1>
+        <nav>
+            <a href="">All post</a>
+        </nav>
+    </head>
+    
+    <section id="welcome">
+        <header>
+            <img src="" alt="Darshil - the author of this blog"/>
+            <h2>DARSHIL-PATEL'S BLOG</h2>
+        </header>
+        <p>Heyy there , I am darshil patel and i want to write the blogs on AI world!</p>
+    </section>
+
+    <section id="latest-posts">
+        <h2>My Latest Thought and Research</h2>
+        <ul>
+            
+        </ul>
+
+    </section>
+    <section id="about">
+        <h2>What I do?</h2>
+        <p>I am AI enthisuastist , I am very curious in AI realeted things for reaserching and finding the new developments in AI feilds.</p>
+    </section>
+{% endblock %}
