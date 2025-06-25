@@ -7,9 +7,13 @@
 {% block content %}
     <ul>
         {% for book in books %}
-            <li><a href="{% url 'book_details_page' book.id %}">{{ book.title }}</a> (Ratings :- {{ book.ratting}})</li>
+            <li><a href="{% url 'book_details_page' book.slug %}">{{ book.title }}</a> (Ratings :- {{ book.ratting}})</li>
             <p>Author :- {{ book.author }} </p>
             <p>Best selling or not :- {{ book.is_bestselling}}</p>
         {% endfor %}
     </ul>
+
+    <hr>
+    <p>Total Number of Books :- {{ total_number_of_books }} </p>
+    <p>Average Ratting os All Books :- {{ avge_rattings_of_all_books.ratting__avg}}</p>
 {% endblock %}
