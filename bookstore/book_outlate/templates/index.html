@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title%}
+    All Books
+{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for book in books %}
+            <li><a href="{% url 'book_details_page' book.id %}">{{ book.title }}</a> (Ratings :- {{ book.ratting}})</li>
+            <p>Author :- {{ book.author }} </p>
+            <p>Best selling or not :- {{ book.is_bestselling}}</p>
+        {% endfor %}
+    </ul>
+{% endblock %}

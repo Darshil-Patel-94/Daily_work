@@ -1,0 +1,92 @@
+/* ===========================
+   Grid layout for all posts
+=========================== */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 1fr)); /* each column min 280px */
+  gap: 2rem;
+  max-width: 1200px; /* slightly wider grid */
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+/* ===========================
+   Post card styling
+=========================== */
+.post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.post a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-decoration: none;
+  color: black;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow: hidden;
+}
+
+/* ===========================
+   Post hover effect
+=========================== */
+.post a:hover,
+.post a:active {
+  transform: translateY(-5px) scale(1.02);
+  background-color: #390281;
+  color: white;
+}
+
+/* ===========================
+   Post image
+=========================== */
+.post img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 1rem auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ===========================
+   Post text
+=========================== */
+.post h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.post p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+  margin-top: 0.5rem;
+  text-align: left; /* better for long paragraphs */
+  overflow: hidden;
+}
+
+/* ===========================
+   Responsive layout
+=========================== */
+@media (max-width: 960px) {
+  .posts-grid {
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
