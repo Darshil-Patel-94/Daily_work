@@ -32,6 +32,10 @@ class Author(models.Model):
     
     def __str__(self):
         return self.full_name()
+    
+    def book_titles(self):
+        return ", ".join([book.title for book in self.books.all()])
+    book_titles.short_description = "Book Title"
 
 
 class Book(models.Model):
@@ -42,7 +46,7 @@ class Book(models.Model):
     is_bestselling = models.BooleanField(default=False)
     slug = models.SlugField(default="",null=False , blank=True,
                              db_index=True)
-    published_country = models.ManyToManyField(Country)
+    published_country = models.ManyToManyField(Country,null=False,related_name="books")
 
     def save(self,*args,**kwargs):
         self.slug = slugify(self.title)
