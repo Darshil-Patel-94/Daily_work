@@ -62,6 +62,10 @@
                 <td>{{ t.product_names }}</td>
                 <td>{{ t.timestamp }}</td>
                 <td>{{ t.description }}</td>
+                <td>
+                    <a href="{% url 'edit_transaction' t.id %}">Edit</a> |
+                    <a href="{% url 'delete_transaction' t.id %}">Delete</a>
+                </td>
             </tr>
             {% endfor %}
         </table>
